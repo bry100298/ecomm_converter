@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"SC-PORTAL-IIS-10700-stderr-1709541547423.txt","computername":"SC-PORTAL-IIS","pid":10700,"type":"stderr","created":1709541547423},{"file":"SC-PORTAL-IIS-12052-stderr-1709538446925.txt","computername":"SC-PORTAL-IIS","pid":12052,"type":"stderr","created":1709538446925},{"file":"SC-PORTAL-IIS-12572-stderr-1709541587829.txt","computername":"SC-PORTAL-IIS","pid":12572,"type":"stderr","created":1709541587829},{"file":"SC-PORTAL-IIS-12592-stderr-1709542013779.txt","computername":"SC-PORTAL-IIS","pid":12592,"type":"stderr","created":1709542013779},{"file":"SC-PORTAL-IIS-12708-stderr-1709541591409.txt","computername":"SC-PORTAL-IIS","pid":12708,"type":"stderr","created":1709541591409},{"file":"SC-PORTAL-IIS-12860-stderr-1709542126056.txt","computername":"SC-PORTAL-IIS","pid":12860,"type":"stderr","created":1709542126056},{"file":"SC-PORTAL-IIS-12904-stderr-1709541650843.txt","computername":"SC-PORTAL-IIS","pid":12904,"type":"stderr","created":1709541650843},{"file":"SC-PORTAL-IIS-12932-stderr-1709541688539.txt","computername":"SC-PORTAL-IIS","pid":12932,"type":"stderr","created":1709541688539},{"file":"SC-PORTAL-IIS-13568-stderr-1709619223208.txt","computername":"SC-PORTAL-IIS","pid":13568,"type":"stderr","created":1709619223208},{"file":"SC-PORTAL-IIS-13672-stderr-1709542009407.txt","computername":"SC-PORTAL-IIS","pid":13672,"type":"stderr","created":1709542009407},{"file":"SC-PORTAL-IIS-14584-stderr-1709541839032.txt","computername":"SC-PORTAL-IIS","pid":14584,"type":"stderr","created":1709541839032},{"file":"SC-PORTAL-IIS-15032-stderr-1709541626361.txt","computername":"SC-PORTAL-IIS","pid":15032,"type":"stderr","created":1709541626361},{"file":"SC-PORTAL-IIS-16376-stderr-1709542123567.txt","computername":"SC-PORTAL-IIS","pid":16376,"type":"stderr","created":1709542123567},{"file":"SC-PORTAL-IIS-16396-stderr-1709541618752.txt","computername":"SC-PORTAL-IIS","pid":16396,"type":"stderr","created":1709541618752},{"file":"SC-PORTAL-IIS-16428-stderr-1709541589802.txt","computername":"SC-PORTAL-IIS","pid":16428,"type":"stderr","created":1709541589802},{"file":"SC-PORTAL-IIS-17168-stderr-1709541562881.txt","computername":"SC-PORTAL-IIS","pid":17168,"type":"stderr","created":1709541562881},{"file":"SC-PORTAL-IIS-17300-stderr-1709541637125.txt","computername":"SC-PORTAL-IIS","pid":17300,"type":"stderr","created":1709541637125},{"file":"SC-PORTAL-IIS-18508-stderr-1709541625548.txt","computername":"SC-PORTAL-IIS","pid":18508,"type":"stderr","created":1709541625548},{"file":"SC-PORTAL-IIS-18644-stderr-1709541649602.txt","computername":"SC-PORTAL-IIS","pid":18644,"type":"stderr","created":1709541649602},{"file":"SC-PORTAL-IIS-19992-stderr-1709678190503.txt","computername":"SC-PORTAL-IIS","pid":19992,"type":"stderr","created":1709678190503},{"file":"SC-PORTAL-IIS-20400-stderr-1709541616628.txt","computername":"SC-PORTAL-IIS","pid":20400,"type":"stderr","created":1709541616628}];
+        var lastUpdated = 1709678192882;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

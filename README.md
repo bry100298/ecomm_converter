@@ -66,8 +66,8 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
-  createServer(async (req, res) => {
+app.prepare().then(() =&gt; {
+  createServer(async (req, res) =&gt; {
     try {
       const parsedUrl = parse(req.url, true);
       const { pathname, query } = parsedUrl;
@@ -86,12 +86,12 @@ app.prepare().then(() => {
       res.end("internal server error");
     }
   })
-    .once("error", (err) => {
+    .once("error", (err) =&gt; {
       console.error(err);
       process.exit(1);
     })
-    .listen(process.env.PORT || 3000, () => {
-      console.log(`> Ready on http://localhost:${process.env.PORT || 3000}`);
+    .listen(process.env.PORT || 3000, () =&gt; {
+      console.log(`> Ready on <a href="http://localhost:${process.env.PORT || 3000}">http://localhost:${process.env.PORT || 3000}</a>`);
     });
 });
 </code></pre>
@@ -161,4 +161,33 @@ yarn dev
 <pre><code>npm run build
 # or
 yarn build
-</code
+</code></pre>
+
+<h2>Installing iisnode Locally</h2>
+
+<p>To install iisnode on your server, follow these steps:</p>
+
+<ol>
+  <li>Clone or download the iisnode repository from the official GitHub repository: <a href="https://github.com/tjanczuk/iisnode">https://github.com/tjanczuk/iisnode</a>.</li>
+  <li>Follow the installation instructions provided in the repository's README.md file or documentation.</li>
+</ol>
+
+<p>Once installed, you'll be able to use iisnode for hosting your Node.js applications on IIS.</p>
+
+<h2>Additional Dependencies</h2>
+
+<p>In order to utilize certain features of this project, you'll need to install additional dependencies:</p>
+
+<p>To install <code>iisnode</code> globally, run:</p>
+<pre><code>npm install -g iisnode</code></pre>
+<p><strong>Description:</strong> <em>iisnode is needed for hosting Node.js applications in IIS, particularly useful for Windows servers.</em></p>
+
+<p>To install <code>rimraf</code> globally, run:</p>
+<pre><code>npm install -g rimraf</code></pre>
+<p><strong>Description:</strong> <em>rimraf is a cross-platform tool for deleting files and directories. The command <code>rimraf .next</code> is used to remove the <code>.next</code> directory.</em></p>
+
+<p>To install <code>express</code>, run:</p>
+<pre><code>npm install express</code></pre>
+<p><strong>Description:</strong> <em>express is a web application framework for Node.js, used for building web applications and APIs.</em></p>
+</body>
+</html>

@@ -191,3 +191,7 @@ yarn build
 <p><strong>Description:</strong> <em>express is a web application framework for Node.js, used for building web applications and APIs.</em></p>
 </body>
 </html>
+
+
+
+npm install --save @fortawesome/fontawesome-free

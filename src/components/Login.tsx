@@ -18,7 +18,7 @@ const Login = () => {
 
 
   // Apply custom styles to prevent scrolling and increase the size of the form
-  const customStyles = {
+  const customStyles: Record<string, React.CSSProperties> = {
     formContainer: {
       display: 'flex',
       justifyContent: 'center',
@@ -33,7 +33,7 @@ const Login = () => {
       background: '#f9f9f9',
       borderRadius: '8px',
       boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-      textAlign: 'center',
+      textAlign: 'center' as const, // Set textAlign as const
       maxWidth: '400px', // Adjust the max width as needed
       width: '100%', // Make the form container responsive
     },

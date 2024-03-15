@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rd /s /q .next"
+    "clean": "rd /s /q .next",
+    "copy-images": "cp -r public/* .next/static/images/"
   },
   "dependencies": {
     "express": "^4.18.3",

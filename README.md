@@ -195,3 +195,16 @@ yarn build
 
 
 npm install --save @fortawesome/fontawesome-free
+
+
+
+
+
+
+
+npm run build && npm run copy-images
+{
+  "scripts": {
+    "copy-images": "cp -r public/* .next/static/images/"
+  }
+}

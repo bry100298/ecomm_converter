@@ -18,37 +18,10 @@ module.exports = {
   // Set the assetPrefix to '/ecconvtrv1/' to prefix all asset URLs with this path
   // assetPrefix: "/ecconvtrv1/build/",
   assetPrefix: "/ecconvtrv1/",
-  webpack(config, { isServer }) {
-    // Resolve images from public directory
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      include: [path.resolve(__dirname, "public")],
-      use: [
-        {
-          loader: "file-loader",
-          options: {
-            publicPath: "/_next/",
-            outputPath: "static/images/",
-          },
-        },
-      ],
-    });
-
-    // Resolve images from src/app directory
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      include: [path.resolve(__dirname, "src/app")],
-      use: [
-        {
-          loader: "file-loader",
-          options: {
-            publicPath: "/_next/",
-            outputPath: "static/images/",
-          },
-        },
-      ],
-    });
-
-    return config;
+  env: {
+    baseUrl: process.env.BASE_URL || "https://portal.benby.com/ecconvtrv1",
+  },
+  images: {
+    domains: ["portal.benby.com", "portal.benby.com/ecconvtrv1"],
   },
 };

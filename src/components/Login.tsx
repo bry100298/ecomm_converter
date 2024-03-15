@@ -116,6 +116,7 @@ const Login = () => {
               background: "green",
               color: "#fff",
               border: "none",
+              cursor: "pointer",
             }}
           >
             Login

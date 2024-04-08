@@ -2,11 +2,12 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Footer, Header, Navbar } from "../components";
 
 const inter = Inter({ subsets: ["latin"] });
 
 // Define baseUrl environment variable
-const baseUrl = process.env.baseUrl || '';
+const baseUrl = process.env.baseUrl || "";
 
 export const metadata: Metadata = {
   title: "EComm Finance Automation Converter",
@@ -17,15 +18,21 @@ export const metadata: Metadata = {
         // Use the baseUrl to construct the absolute URL for the favicon image
         url: `${baseUrl}/favicon.png`,
         href: `${baseUrl}/favicon.png`, // You can update href as well if necessary
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      {/* <body className={inter.className}>{children}</body> */}
+      <body className='relative'>
+      <Header />
+      <Navbar />
+      {children}
+      <Footer  />
+      </body>
     </html>
   );
 };

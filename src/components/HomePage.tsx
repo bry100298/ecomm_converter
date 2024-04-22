@@ -18,10 +18,10 @@ const HomePage = () => {
         backgroundPosition: "center",
       }}
     >
-      <h1 className="text-3xl font-bold text-black mb-4">
+      <h1 className="text-5xl font-bold text-black mb-4" style={{ fontWeight: 700 }}>
         Welcome to the Home Page
       </h1>
-      <a
+      {/* <a
         href="/ecconvtrv1/login" // Link to the login page
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         style={{ cursor: "pointer" }} // Change cursor to pointer on hover
@@ -32,7 +32,7 @@ const HomePage = () => {
         title="Explore Ecoonverter"
         containerStyles="bg-primary-blue text-white rounded-full mt-10"
         handleClick={handleScroll}
-      />
+      /> */}
     </div>
   );
 };

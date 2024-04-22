@@ -208,3 +208,4 @@ npm run build && npm run copy-images
     "copy-images": "cp -r public/* .next/static/images/"
   }
 }
+ 

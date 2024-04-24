@@ -1,58 +1,33 @@
-"use client";
+"use client"; // Marking this file as a client component
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-import CustomButton from "./CustomButton";
-import { useRouter } from "next/navigation"; //If used in the app directory, migrate to the new hooks imported from next/navigation.
+import { useRouter, usePathname } from "next/navigation"; // Import from next/navigation instead of next/router
 
 const baseUrl = process.env.baseUrl || "";
 
 const Navbar = () => {
-  // const router = useRouter();
-  // const [isSignInPage, setIsSignInPage] = useState(false);
+  const router = useRouter();
+  const path = usePathname();
+  // const [isSignInPage, setIsSignInPage] = useState(path.includes("/sign-in"));
+  const [isSignInPage, setIsSignInPage] = useState(false);
 
   // useEffect(() => {
-  //   setIsSignInPage(window.location.pathname.includes("/sign-in"));
-  // }, []);
-
-  // const handleLogin = () => {
-  //   router.push("/sign-in");
-  // };
-
-  const [isSignInPage, setIsSignInPage] = useState(
-    window.location.pathname.includes("/sign-in")
-  );
+  //   setIsSignInPage(path.includes("/sign-in"));
+  // }, [path]);
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      setIsSignInPage(window.location.pathname.includes("/sign-in"));
-    };
-
-    handleRouteChange(); // Initial check
-
-    return () => {
-      // No need for cleanup since we're not subscribing to router events
-    };
-  }, []);
+    if (path) {
+      setIsSignInPage(path.includes("/sign-in"));
+    }
+  }, [path]);
 
   const handleLogin = () => {
-    window.location.href = "ecconvtrv1/sign-in";
+    router.push("/sign-in");
   };
 
   return (
-    //   <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-16 py-4">
-    //     <Link href="/" className="flex justify-center items-center">
-    //       <Image
-    //         src={`${baseUrl}/favicon.png`}
-    //         alt="Ecconverter"
-    //         width={118}
-    //         height={18}
-    //         className="object-contain"
-    //       />
-    //     </Link>
-    //   </nav>
     <nav className="bg-green-600 p-4">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center cursor-pointer">
@@ -74,39 +49,6 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-        {/* <div className="hidden md:block">
-          <ul className="flex space-x-4">
-            <li>
-              <Link href="/">
-                <div className="text-white hover:text-gray-300 cursor-pointer">
-                  Home
-                </div>
-              </Link>
-            </li>
-          </ul>
-        </div> */}
-        {/* <div className="hidden md:block">
-          <ul className="flex space-x-4">
-            <CustomButton
-              title="Log in"
-              btnType="button"
-              containerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
-            />
-             Add more menu items as needed 
-          </ul>
-        </div> */}
-
-        {/* <div className="hidden md:block">
-          <ul className="flex space-x-4">
-            <button
-              className="text-primary-blue rounded-full bg-white min-w-[130px] custom-btn"
-              onClick={handleLogin}
-            >
-              {isSignInPage ? "Log ins" : "Log in"}
-            </button>
-          </ul>
-        </div> */}
-
         <div className="hidden md:block">
           <ul className="flex space-x-4">
             {!isSignInPage && (

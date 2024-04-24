@@ -209,3 +209,7 @@ npm run build && npm run copy-images
   }
 }
  
+
+npm install mssql
+
+npm install mssql and npm install --save-dev @types/mssql

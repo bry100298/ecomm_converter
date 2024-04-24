@@ -213,3 +213,12 @@ npm run build && npm run copy-images
 npm install mssql
 
 npm install mssql and npm install --save-dev @types/mssql
+
+From
+  "next": "^14.1.0",
+  "eslint-config-next": "14.1.0",
+To
+  "next": "13.4.12",
+  "eslint-config-next": "13.4.12",
+
+    

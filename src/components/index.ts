@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import CustomButton from './CustomButton';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Login from './Login';
 
 export {
     Header,
@@ -10,4 +11,5 @@ export {
     CustomButton,
     Navbar,
     Footer,
+    Login,
 }

@@ -29,7 +29,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* <body className={inter.className}>{children}</body> */}
       <body className='relative'>
       <Header />
-      <Navbar />
+      {/* <Navbar /> */}
       {children}
       <Footer  />
       </body>

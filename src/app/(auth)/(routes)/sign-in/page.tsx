@@ -1,6 +1,6 @@
 // pages/auth/sign-in/page.tsx
 import React from 'react';
-import {Login, Navbar} from '../../../components';
+import {Login, Navbar} from '../../../../components';
 
 const LoginPage = () => {
   return (

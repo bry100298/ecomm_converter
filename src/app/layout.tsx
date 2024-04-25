@@ -2,7 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Footer, Header, Navbar } from "../components";
+import { Footer, Header } from "../components";
+import Sidebar from "./(dashboard)/_components/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* <body className={inter.className}>{children}</body> */}
       <body className='relative'>
       <Header />
+      {/* <Sidebar /> */}
       {/* <Navbar /> */}
       {children}
       <Footer  />

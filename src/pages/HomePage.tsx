@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import CustomButton from "./CustomButton";
+import CustomButton from "../components/CustomButton";
 
 // Get the base URL from the environment variable
 const baseUrl = process.env.baseUrl || "";

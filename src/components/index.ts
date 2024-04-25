@@ -1,15 +1,8 @@
-import Header from './Header';
-import HomePage from './HomePage';
-import CustomButton from './CustomButton';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Login from './Login';
+import Header from "./Header";
+import HomePage from "../pages/HomePage";
+import CustomButton from "./CustomButton";
+import Footer from "./Footer";
+import LoginPage from "../pages/LoginPage";
+import PrivateRoute from "./PrivateRoute";
 
-export {
-    Header,
-    HomePage,
-    CustomButton,
-    Navbar,
-    Footer,
-    Login,
-}
+export { Header, HomePage, CustomButton, Footer, LoginPage, PrivateRoute };

@@ -8,7 +8,7 @@ import { useState } from "react";
 import { FaUser, FaKey, FaLock } from "react-icons/fa";
 import Image from "next/image";
 
-const Login = () => {
+const LoginPage = () => {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -130,4 +130,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

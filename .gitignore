@@ -44,3 +44,7 @@ style
 
 favicon.png
 favicon1.ico
+
+
+# .env
+# .env*.local

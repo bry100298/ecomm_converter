@@ -1,5 +1,6 @@
 import React from "react";
-import Logo from "./logo";
+import { Logo } from "./logo";
+import { SidebarRoutes } from "./sidebar-routes";
 
 export default function Sidebar() {
   return (
@@ -7,6 +8,9 @@ export default function Sidebar() {
       <div className="p-6">
         <Logo />
       </div>
+      <div className="flex flex-col w-full">
+        <SidebarRoutes />
+      </div>
     </div>
   );
-}
+};

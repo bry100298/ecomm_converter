@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const baseUrl = process.env.baseUrl || "";
 
-export default function logo() {
+export const Logo = () => {
   return (
     <Image
       height={130}

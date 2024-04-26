@@ -242,5 +242,9 @@ To
 
 <p>Clicking on the dashboard will direct you to <a href="https://portal.benby.com/ecconvtrv1">https://portal.benby.com/ecconvtrv1</a>.</p>
 
+<h2>To use index2.js file to see that it connects to database and retrieve data</h2>
+<pre><code>node index2.js</code></pre>
 </body>
 </html>
+
+

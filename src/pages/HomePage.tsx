@@ -13,13 +13,14 @@ const HomePage = () => {
     <div
       className="flex flex-col items-center justify-center h-screen"
       style={{
-        backgroundImage: `url('${baseUrl}/Style/Benby-Login/LOGIN_BG.jpg')`,
+        // backgroundImage: `url('${baseUrl}/Style/Benby-Login/LOGIN_BG.jpg')`,
+        backgroundImage: `url('${baseUrl}/img/writing-background-18yew0mswhx64txi.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <h1 className="text-5xl font-bold text-black mb-4" style={{ fontWeight: 700 }}>
-        Welcome to the Home Page
+        {/* Welcome to the Home Page */}
       </h1>
       {/* <a
         href="/ecconvtrv1/login" // Link to the login page

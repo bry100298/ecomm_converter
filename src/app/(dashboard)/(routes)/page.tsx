@@ -11,7 +11,7 @@ export default function Home() {
     // </main>
 
     <div>
-      <HomePage />
+      {/* after signout logic, you will remove homepage here */}
     </div>
   );
 }

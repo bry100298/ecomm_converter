@@ -244,6 +244,10 @@ To
 
 <h2>To use index2.js file to see that it connects to database and retrieve data</h2>
 <pre><code>node index2.js</code></pre>
+
+<h2>To use index3.js file to see that it connects to database and retrieve data inside of data.json, but you must create data.json same path in index3.js</h2>
+<pre><code>node index3.js</code></pre>
+
 </body>
 </html>
 

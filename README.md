@@ -227,3 +227,12 @@ npm install react-router-dom
 
 
 npm install lucide-react
+
+
+if use link https://portal.benby.com/ecconvtrv1
+it will go directed to https://portal.benby.com/ecconvtrv1/sign-in
+
+if successful login, will go to
+https://portal.benby.com/ecconvtrv1/main
+
+click dashboard will go to https://portal.benby.com/ecconvtrv1

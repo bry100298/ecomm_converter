@@ -189,50 +189,58 @@ yarn build
 <p>To install <code>express</code>, run:</p>
 <pre><code>npm install express</code></pre>
 <p><strong>Description:</strong> <em>express is a web application framework for Node.js, used for building web applications and APIs.</em></p>
-</body>
-</html>
-
-
-
-npm install --save @fortawesome/fontawesome-free
 
 
 
 
+<p>To install <code>@fortawesome/fontawesome-free</code>, run:</p>
+<pre><code>npm install --save @fortawesome/fontawesome-free</code></pre>
 
+<p>Additionally, run the following commands for building and copying images:</p>
 
-
-npm run build && npm run copy-images
+<pre><code>npm run build && npm run copy-images
 {
   "scripts": {
     "copy-images": "cp -r public/* .next/static/images/"
   }
 }
- 
+</code></pre>
 
-npm install mssql
+<p>For the necessary package to work:</p>
+
+<pre><code># THIS IS THE ONLY PACKAGE WE NEED
+npm install mssql --save
+npm install msnodesqlv8 --save
+    "msnodesqlv8": "^4.2.1",
+    "mssql": "^10.0.2",
+# END HERE
 
 npm install mssql and npm install --save-dev @types/mssql
+</code></pre>
 
-From
+<p>Update your dependencies:</p>
+
+<pre><code>From
   "next": "^14.1.0",
   "eslint-config-next": "14.1.0",
 To
   "next": "13.4.12",
   "eslint-config-next": "13.4.12",
+</code></pre>
 
-    
+<p>Install <code>react-router-dom</code>:</p>
 
-npm install react-router-dom
+<pre><code>npm install react-router-dom</code></pre>
 
+<p>Install <code>lucide-react</code>:</p>
 
-npm install lucide-react
+<pre><code>npm install lucide-react</code></pre>
 
+<p>If you use the link <a href="https://portal.benby.com/ecconvtrv1">https://portal.benby.com/ecconvtrv1</a>, it will redirect to <a href="https://portal.benby.com/ecconvtrv1/sign-in">https://portal.benby.com/ecconvtrv1/sign-in</a>.</p>
 
-if use link https://portal.benby.com/ecconvtrv1
-it will go directed to https://portal.benby.com/ecconvtrv1/sign-in
+<p>If the login is successful, it will navigate to <a href="https://portal.benby.com/ecconvtrv1/main">https://portal.benby.com/ecconvtrv1/main</a>.</p>
 
-if successful login, will go to
-https://portal.benby.com/ecconvtrv1/main
+<p>Clicking on the dashboard will direct you to <a href="https://portal.benby.com/ecconvtrv1">https://portal.benby.com/ecconvtrv1</a>.</p>
 
-click dashboard will go to https://portal.benby.com/ecconvtrv1
+</body>
+</html>

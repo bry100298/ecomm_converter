@@ -14,7 +14,10 @@ app
     // Custom middleware to handle requests
     server.use((req, res, next) => {
       // Check if the URL contains a duplicated path segment
-      if (req.url.includes("/ecconvtrv1/ecconvtrv1/")) {
+      if (
+        req.url.includes("/ecconvtrv1/ecconvtrv1/") ||
+        req.url === "/ecconvtrv1/ecconvtrv1"
+      ) {
         // Redirect to 404 error page handled by Next.js
         const error = new Error();
         error.code = "ENOENT";

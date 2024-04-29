@@ -270,5 +270,13 @@ To
 
 npm install @types/mssql @types/dotenv --save-dev
 
+
+
+# To run ts-node database.ts
+npm install -g ts-node
+
+
+npm install ts-node --save-dev
+
 </body>
 </html>

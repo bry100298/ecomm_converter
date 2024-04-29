@@ -268,6 +268,7 @@ To
 <h2>To use ENV file</h2>
 <pre><code>npm install dotenv</code></pre>
 
+npm install @types/mssql @types/dotenv --save-dev
 
 </body>
 </html>

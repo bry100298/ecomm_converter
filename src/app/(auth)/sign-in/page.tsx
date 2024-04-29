@@ -1,11 +1,11 @@
 // pages/auth/sign-in/page.tsx
 import React from "react";
-import { LoginPage } from "../../../../../components";
+import { SignIn } from "../../../components";
 
 const Login = () => {
   return (
     <div>
-      <LoginPage />
+      <SignIn />
     </div>
   );
 };

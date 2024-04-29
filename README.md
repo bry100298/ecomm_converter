@@ -248,7 +248,26 @@ To
 <h2>To use index3.js file to see that it connects to database and retrieve data inside of data.json, but you must create data.json same path in index3.js</h2>
 <pre><code>node index3.js</code></pre>
 
+<p>tedious: Tedious is a pure-JavaScript implementation of the TDS protocol, which is used to interact with SQL Server. It's actively maintained and widely used.</p>
+<pre><code>npm install tedious</code></pre>
+
+<p>mssql: This is another popular Node.js driver for Microsoft SQL Server. It's a wrapper around the Tedious library but provides a more convenient API for interacting with SQL Server.</p>
+<pre><code>npm install mssql</code></pre>
+
+<p>sequelize: Sequelize is an ORM (Object-Relational Mapping) library for Node.js that supports multiple SQL dialects, including SQL Server. It provides a higher-level abstraction for database operations and supports features like migrations and associations.</p>
+<pre><code>npm install sequelize</code></pre>
+<pre><code>npm install tedious # or any other appropriate dialect-specific package</code></pre>
+
+<p>knex: Knex is a query builder for Node.js that supports multiple SQL databases, including SQL Server. It allows you to write SQL queries in a more programmatic way and provides features like migrations and transactions.</p>
+<pre><code>npm install knex</code></pre>
+<pre><code>npm install mssql # or any other appropriate dialect-specific package</code></pre>
+
+<p>msnodesql: This is the driver you're currently using, but there might be performance differences between different versions. You can try updating to the latest version or experimenting with older versions to see if there's any improvement.</p>
+<pre><code>npm install msnodesqlv8@latest</code></pre>
+
+<h2>To use ENV file</h2>
+<pre><code>npm install dotenv</code></pre>
+
+
 </body>
 </html>
-
-

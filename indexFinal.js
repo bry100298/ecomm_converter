@@ -1,11 +1,12 @@
+require("dotenv").config();
 const sql = require("mssql/msnodesqlv8");
 
-// Create a database configuration
+// Load database configuration from environment variables
 const config = {
-  server: "192.168.0.204",
-  database: "dbOSAConverter",
-  user: "SA",
-  password: "P@ssw0rdLan6s",
+  server: process.env.DB_SERVER,
+  database: process.env.DB_DATABASE,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   options: {
     trustedConnection: false, // Use SQL Server Authentication
   },
@@ -21,7 +22,7 @@ sql.connect(config, function (err) {
 
   // Make the query
   const query =
-    "SELECT * FROM [dbo].[vw_employeemasterdata] WHERE EmployeeNo = '210330'";
+    "SELECT * FROM [dbo].[vw_employeemasterdata] WHERE EmployeeNo = '210988'";
 
   request.query(query, function (err, records) {
     if (err) console.log(err);

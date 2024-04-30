@@ -13,6 +13,9 @@
 
 <p>Welcome to the project! This README provides essential instructions to set up and run the project successfully.</p>
 
+<p>All project files must be located directly inside the directory C:\inetpub\wwwroot\ecconvtrv1. They should not be nested within any subfolders.</p>
+
+
 <h2>Installation</h2>
 
 <p>To begin, please ensure you have the following prerequisites installed:</p>

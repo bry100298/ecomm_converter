@@ -1,4 +1,4 @@
-// ts-node index.js
+// ts-node indexTS.ts but cannot tsc indexTS.ts, tsc will create a .js for example it will craete indexTS.js
 require("dotenv").config();
 const sql = require("mssql/msnodesqlv8");
 

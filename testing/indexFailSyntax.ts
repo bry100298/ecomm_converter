@@ -1,9 +1,8 @@
-// ts-node index.js
 require("dotenv").config();
-const sql = require("mssql/msnodesqlv8");
+import * as sql from "mssql/msnodesqlv8";
 
 // Load environment variables from .env file
-const dbConfig = {
+const dbConfig: sql.config = {
     server: process.env.DB_SERVER || "",
     database: process.env.DB_DATABASE || "",
     user: process.env.DB_USER || "",
@@ -16,12 +15,13 @@ const dbConfig = {
 
 // Main function to connect to the database and execute query
 async function main() {
+    let pool;
     try {
         // Make the connection
-        await sql.connect(dbConfig);
+        pool = await sql.connect(dbConfig);
 
         // Make a request
-        const request = new sql.Request();
+        const request = pool.request();
 
         // Make the query
         const query =
@@ -29,12 +29,16 @@ async function main() {
 
         // Execute the query
         const result = await request.query(query);
-        console.log(result);
+        console.log(result.recordset);
 
-        // Close the SQL connection
-        await sql.close();
+        // Close the connection pool
+        await pool.close();
     } catch (error) {
         console.error("Error executing query:", error);
+        if (pool) {
+            // Close the connection pool if an error occurred
+            await pool.close();
+        }
     }
 }
 

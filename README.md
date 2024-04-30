@@ -268,15 +268,33 @@ To
 <h2>To use ENV file</h2>
 <pre><code>npm install dotenv</code></pre>
 
-npm install @types/mssql @types/dotenv --save-dev
+
+<p>To install dotenv and the necessary type definitions:</p>
+<pre><code>npm install @types/mssql @types/dotenv --save-dev</code></pre>
+
+<p>To run <code>database.ts</code> using ts-node:</p>
+<pre><code>npm install -g ts-node</code></pre>
+<pre><code>npm install ts-node --save-dev</code></pre>
+
+<p>To run it globally so you can compile TypeScript files:</p>
+<pre><code>npm install -g typescript</code></pre>
+
+<p>To compile:</p>
+<pre><code>tsc database.ts</code></pre>
+
+<p>It will create javascript file After compile:</p>
+<pre><code>node database.js</code></pre>
 
 
+<p>To run directly of .ts file without compiling:</p>
+<pre><code>ts-node database.ts</code></pre>
 
-# To run ts-node database.ts
-npm install -g ts-node
+<p>If you encounter any issues related to type definitions or dependencies, you can install them using:</p>
+<pre><code>npm install @types/dotenv --save-dev</code></pre>
 
-
-npm install ts-node --save-dev
+<p>Ensure you have the latest TypeScript version and type definitions for tedious:</p>
+<pre><code>npm install typescript@latest @types/tedious@latest</code></pre>
 
 </body>
 </html>
+

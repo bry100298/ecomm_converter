@@ -1,11 +1,11 @@
-const configLoader = require("dotenv");
-const pathUtils = require("path");
+const config = require("dotenv");
+const path = require("path");
 
 // Resolve the path to .env file
-const envFilePath = pathUtils.resolve(__dirname, "..", "..", ".env");
+const envFilePath = path.resolve(__dirname, "..", "..", ".env");
 
 // Load environment variables from .env file
-const loadedEnvConfig = configLoader.config({ pathUtils: envFilePath });
+const loadedEnvConfig = config.config({ path: envFilePath });
 
 // Check if there was an error loading the .env file
 if (loadedEnvConfig.error) {

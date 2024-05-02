@@ -1,37 +1,43 @@
-// src/lib/auth.ts
-
 const mssqlUsers = require("mssql/msnodesqlv8"); // Import mssql module
 const usersData = require("./database.ts"); // Import the database configuration
 
-// Function to authenticate a user based on EmployeeNo and password
-const authenticateUser = async (employeeNo, password) => {
+async function login(username: string, password: string): Promise<boolean> {
     try {
         // Create a connection pool
         const pool = await mssqlUsers.connect(usersData);
 
-        // Query to check if the provided EmployeeNo and password combination exists in the database
-        const query = `
-            SELECT COUNT(*) AS count
-            FROM [dbo].[vw_employeemasterdata]
-            WHERE EmployeeNo = @employeeNo AND [password] = @password;
-        `;
-
-        // Execute the query using the database connection
+        // Query
         const result = await pool.request()
-            .input('employeeNo', mssqlUsers.VarChar, employeeNo)
-            .input('password', mssqlUsers.VarChar, password)
-            .query(query);
+            .input("username", mssqlUsers.VarChar, username)
+            .input("password", mssqlUsers.VarChar, password)
+            .query("SELECT * FROM [dbo].[vw_employeemasterdata] WHERE EmployeeNo = @username AND Password = @password");
 
-        // Check if any records were found (i.e., count > 0)
-        if (result.recordset[0].count > 0) {
-            return true; // Authentication succeeds
+        // Check if user exists
+        if (result.recordset.length > 0) {
+            // User authenticated successfully
+            console.log("Login successful");
+            return true;
         } else {
-            return false; // Authentication fails
+            // User not found or incorrect credentials
+            console.log("Invalid username or password");
+            return false;
         }
-    } catch (error) {
-        console.error('Error authenticating user:', error);
-        return false; // Authentication fails due to an error
-    }
-};
 
-module.exports = { authenticateUser };
+        // Close the connection pool
+        await pool.close();
+    } catch (err) {
+        // Handle errors
+        console.error("Error:", err);
+        return false;
+    }
+}
+
+async function logout() {
+    // You can implement logout functionality here if needed
+    console.log("User logged out");
+}
+
+module.exports = {
+    login,
+    logout
+};

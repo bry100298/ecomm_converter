@@ -1,20 +1,20 @@
-const dotenv = require("dotenv");
-const path = require("path");
+const configLoader = require("dotenv");
+const pathUtils = require("path");
 
 // Resolve the path to .env file
-const envPath = path.resolve(__dirname, "..", "..", ".env");
+const envFilePath = pathUtils.resolve(__dirname, "..", "..", ".env");
 
 // Load environment variables from .env file
-const envConfig = dotenv.config({ path: envPath });
+const loadedEnvConfig = configLoader.config({ pathUtils: envFilePath });
 
 // Check if there was an error loading the .env file
-if (envConfig.error) {
-    console.error("Error loading .env file:", envConfig.error);
+if (loadedEnvConfig.error) {
+    console.error("Error loading .env file:", loadedEnvConfig.error);
     process.exit(1); // Exit the process if there's an error loading the .env file
 }
 
 // Database configuration
-const dbConfig = {
+const databaseConfiguration = {
     server: process.env.DB_SERVER || "",
     database: process.env.DB_DATABASE || "",
     user: process.env.DB_USER || "",
@@ -25,4 +25,4 @@ const dbConfig = {
     driver: "msnodesqlv8",
 };
 
-module.exports = dbConfig;
+module.exports = databaseConfiguration;

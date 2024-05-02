@@ -1,12 +1,12 @@
-const sql = require("mssql/msnodesqlv8"); // Import mssql module
+const mssqlModule = require("mssql/msnodesqlv8"); // Import mssql module
 // delete require.cache[require.resolve('./database.ts')];
 const empdata = require("./database.ts"); // Import the database configuration
 
 
-async function main() {
+async function mainasd() {
     try {
         // Create a connection pool
-        const pool = await sql.connect(empdata);
+        const pool = await mssqlModule.connect(empdata);
 
         // Query
         const result = await pool.request()
@@ -24,4 +24,4 @@ async function main() {
 }
 
 // Call the main function
-main();
+mainasd();

@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaUser, FaKey, FaLock } from "react-icons/fa";
 import Image from "next/image";
+// const { login } = require("../../lib/auth.ts");
+// import { login } from "../../lib/auth";
+import { login, logout } from "../../lib";
 
 const SignIn = () => {
   const router = useRouter();
@@ -16,8 +19,8 @@ const SignIn = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Perform authentication logic here (e.g., call an API to validate credentials)
-    // If authentication is successful, redirect to portal.benby.com/ecconv
-    router.push("https://portal.benby.com/ecconv");
+    // If authentication is successful, redirect to portal.benby.com/ecconvtrv1
+    router.push("https://portal.benby.com/ecconvtrv1");
   };
 
   // Define baseUrl environment variable
@@ -72,6 +75,7 @@ const SignIn = () => {
       fontSize: "16px",
     },
   };
+
 
   return (
     <div style={customStyles.formContainer}>

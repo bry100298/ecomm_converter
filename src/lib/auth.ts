@@ -1,7 +1,7 @@
 const mssqlUsers = require("mssql/msnodesqlv8"); // Import mssql module
 const usersData = require("./database.ts"); // Import the database configuration
 
-async function login(username: string, password: string): Promise<boolean> {
+export async function login(username: string, password: string): Promise<boolean> {
     try {
         // Create a connection pool
         const pool = await mssqlUsers.connect(usersData);
@@ -32,12 +32,12 @@ async function login(username: string, password: string): Promise<boolean> {
     }
 }
 
-async function logout() {
+export async function logout() {
     // You can implement logout functionality here if needed
     console.log("User logged out");
 }
 
-module.exports = {
-    login,
-    logout
-};
+// module.exports = {
+//     login,
+//     logout
+// };

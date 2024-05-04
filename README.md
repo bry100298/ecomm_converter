@@ -299,3 +299,11 @@ To
 </html>
 
 npm install next-auth
+
+
+"critters": "^0.0.22",
+"file-loader": "^6.2.0",
+"next-transpile-modules": "^10.0.1",
+"node-loader": "^2.0.0",
+"node-polyfill-webpack-plugin": "^3.0.0",
+"raw-loader": "^4.0.2",

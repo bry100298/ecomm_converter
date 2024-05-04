@@ -9,18 +9,41 @@ import { FaUser, FaKey, FaLock } from "react-icons/fa";
 import Image from "next/image";
 // const { login } = require("../../lib/auth.ts");
 // import { login } from "../../lib/auth";
-import { login, logout } from "../../lib";
+// import { login, logout } from "../../lib";
+import { authenticateUser } from '../../lib/auth';
 
 const SignIn = () => {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Perform authentication logic here (e.g., call an API to validate credentials)
     // If authentication is successful, redirect to portal.benby.com/ecconvtrv1
-    router.push("https://portal.benby.com/ecconvtrv1");
+    // router.push("https://portal.benby.com/ecconvtrv1");
+    // Perform authentication logic
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        // Set session variable indicating user is logged in
+        sessionStorage.setItem('isLoggedIn', 'true');
+        // Redirect to the desired page
+        router.push('/dashboard');
+      } else {
+        const errorData = await response.json();
+        alert(errorData.message);
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      alert('Login failed. Please try again later.');
+    }
   };
 
   // Define baseUrl environment variable

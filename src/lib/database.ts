@@ -1,5 +1,6 @@
 const config = require("dotenv");
 const path = require("path");
+import { ConnectionPool } from 'mssql';
 
 // Resolve the path to .env file
 const envFilePath = path.resolve(__dirname, "..", "..", ".env");
@@ -25,4 +26,6 @@ const databaseConfiguration = {
     driver: "msnodesqlv8",
 };
 
-module.exports = databaseConfiguration;
+// module.exports = databaseConfiguration;
+// Create connection pool
+export const pool = new ConnectionPool(databaseConfiguration);
